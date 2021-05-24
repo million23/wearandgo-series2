@@ -1,0 +1,47 @@
+﻿<Page x:Class="WearAndGoS2_WPF.Views.Cabinet.About"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WearAndGoS2_WPF.Views.Cabinet"
+      xmlns:ui="http://schemas.modernwpf.com/2019"
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d"
+      Loaded="PageLoad"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="About">
+
+    <Grid Background="#c6e2e9">
+        <ui:ScrollViewerEx>
+            <WrapPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <material:Card Padding="40" >
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Style="{DynamicResource MaterialDesignHeadline4TextBlock}" Text="Who did this?" />
+                        <Separator MinWidth="400" Margin="10 20"/>
+
+                        <Image Width="250" Height="250" Name="Icon" Source="pack://siteoforigin:,,,/Assets/Icon.png"/>
+
+                        <TextBlock Style="{DynamicResource MaterialDesignHeadline4TextBlock}" Text="Wear and Go" TextAlignment="Center" Margin="0 5 0 0" />
+                        <TextBlock Style="{DynamicResource MaterialDesignSubtitle1TextBlock}" Text="Snapshot 18v2.1.5" TextAlignment="Center" Margin="0 5 0 0" />
+                        
+                        <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}" Text="Developed by" Margin="0 20 0 0" />
+                        <TextBlock Style="{DynamicResource MaterialDesignSubtitle1TextBlock}" Text="Million Creations" />
+                        
+                        <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}" Text="Lead Developer and Lead Designer" Margin="0 20 0 0" />
+                        <TextBlock Style="{DynamicResource MaterialDesignSubtitle1TextBlock}" Text="Gerald Chavez" />
+                        
+                        <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}" Text="Developers and Designers" Margin="0 20 0 0" />
+                        <TextBlock Style="{DynamicResource MaterialDesignSubtitle1TextBlock}" Text="Kevin Corpin" />
+                        <TextBlock Style="{DynamicResource MaterialDesignSubtitle1TextBlock}" Text="Carlo Diaz" />
+                        
+                        <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}" Text="Testers and Quality Assurance" Margin="0 20 0 0" />
+                        <TextBlock Style="{DynamicResource MaterialDesignSubtitle1TextBlock}" Text="Carlo Diaz" />
+                        <TextBlock Style="{DynamicResource MaterialDesignSubtitle1TextBlock}" Text="Charles Daniel Turiaga" />
+                        <TextBlock Style="{DynamicResource MaterialDesignSubtitle1TextBlock}" Text="Zhyrex Canino" />
+
+                    </StackPanel>
+                </material:Card>
+            </WrapPanel>
+        </ui:ScrollViewerEx>
+    </Grid>
+</Page>

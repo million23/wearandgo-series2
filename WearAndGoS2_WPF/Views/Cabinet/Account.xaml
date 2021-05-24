@@ -1,0 +1,41 @@
+﻿<Page x:Class="WearAndGoS2_WPF.Views.Cabinet.Account"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WearAndGoS2_WPF.Views.Cabinet"
+      xmlns:ui="http://schemas.modernwpf.com/2019"
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="PageLoaded"
+      Title="Account">
+
+    <Grid Background="#c6ccd2">
+        <ui:ScrollViewerEx>
+            <WrapPanel Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <material:Card Padding="40">
+                    <GroupBox Header="Your Account's Basic Information" MinWidth="500">
+                        <StackPanel Margin="20 0 0 0" Orientation="Vertical">
+                            <!--<TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}" Text="Full Name" />
+                            <TextBlock Style="{DynamicResource MaterialDesignBody1TextBlock}" Margin="20 0" Name="out_FullName" Text="Full Name" />
+                            <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}" Margin="0 20 0 0" Text="User ID" />
+                            <TextBlock Style="{DynamicResource MaterialDesignBody1TextBlock}" Margin="20 0" Name="out_ID" Text="_User's Account ID_" />-->
+                            <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}" Margin="0 20 0 0" Text="User Details" />
+                            <StackPanel Orientation="Horizontal">
+                                <Image Name="out_image"/>
+                                <TextBlock Style="{DynamicResource MaterialDesignBody1TextBlock}" Margin="20 0" Name="out_principalName" Text="_User's Account ID_" />
+                            </StackPanel>
+
+                            <Separator Margin="10 30"/>
+                            <Button Click="LogOut" Style="{DynamicResource MaterialDesignRaisedButton}" Content="Log Out" HorizontalAlignment="Stretch"/>
+                            <Separator Margin="10 30"/>
+                            <TextBlock Style="{DynamicResource MaterialDesignCaptionTextBlock}" Text="We do not save or share any other information related to your account"/>
+                            <TextBlock Style="{DynamicResource MaterialDesignCaptionTextBlock}" Text="For your security, any information displayed here is all we have to keep"/>
+                        </StackPanel>
+                    </GroupBox>
+                </material:Card>
+            </WrapPanel>
+        </ui:ScrollViewerEx>
+    </Grid>
+</Page>

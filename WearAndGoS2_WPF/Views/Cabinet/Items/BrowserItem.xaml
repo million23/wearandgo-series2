@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="WearAndGoS2_WPF.Views.Cabinet.Items.BrowserItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WearAndGoS2_WPF.Views.Cabinet.Items"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
+             xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d"
+             Loaded="ItemLoaded"
+             Margin="10"
+             Height="200" Width="525">
+    <material:Card HorizontalAlignment="Stretch">
+        <Grid HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Name="prod_image" Stretch="UniformToFill" Grid.Column="0" Source="https://via.placeholder.com/200x200"/>
+            </StackPanel>
+
+            <StackPanel Margin="10" VerticalAlignment="Center" Grid.Column="1" Orientation="Vertical">
+                <TextBlock Style="{DynamicResource MaterialDesignCaptionTextBlock}" Name="prod_id" FontFamily="Consolas"  Text="Product ID"/>
+                <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}" Name="prod_name" Text="Product Name"/>
+                <TextBlock Style="{DynamicResource MaterialDesignSubtitle1TextBlock}" Name="prod_price" Text="Product Price"/>
+                <ComboBox Name="VariantBox" Margin="0 5" material:HintAssist.Hint="Variant" Style="{DynamicResource MaterialDesignFloatingHintComboBox}" HorizontalAlignment="Stretch" ui:ComboBoxHelper.KeepInteriorCornersSquare="True">
+                    <ComboBoxItem Content="askldjlaksjd"/>
+                </ComboBox>
+                <Button Style="{DynamicResource MaterialDesignFlatMidBgButton}" Click="AddToCart" Content="Add to Cart" HorizontalAlignment="Stretch"/>
+            </StackPanel>
+        </Grid>
+    </material:Card>
+</UserControl>
