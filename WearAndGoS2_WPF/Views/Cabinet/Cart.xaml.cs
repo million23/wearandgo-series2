@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace WearAndGoS2_WPF.Views.Cabinet
 {
@@ -120,36 +121,19 @@ namespace WearAndGoS2_WPF.Views.Cabinet
 
                     history.Add(jsonInput);
 
-                    //MessageBox.Show(fromData.ToString());
+                    string MyDocumentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+                    //MessageBox.Show(MyDocumentsPath);
 
                     File.WriteAllText("./Data/TransactionHistory.json", fromData.ToString());
+                    File.WriteAllText($"{MyDocumentsPath}/WearAndGoS2/TransactionHistory.json", fromData.ToString());
+
+
 
                     // cache clear and user log out
-
-                    Models.UserCartContent.CartContent.RemoveAll();
-                    Models.UserCartContent.MainUser.RemoveAll();
-                    Models.UserCartContent.MainUser["Cart"] = Models.UserCartContent.CartContent;
-
-                    foreach (var item in Models.UserCartContent.ClientList)
-                    {
-                        if (item["Owner"].ToString() == Properties.Settings.Default.UserEmail)
-                        {
-                            item["Cart"] = Models.UserCartContent.CartContent;
-                            File.WriteAllText("./Data/CartData.json", Models.UserCartContent.ClientList.ToString());
-                        }
-                    }
-
-                    UpdateCartList();
-
-
-
-                    Properties.Settings.Default.UserEmail = "";
-                    Properties.Settings.Default.Save();
-                    await Controllers.Auth.Client.LogoutAsync();
-                    Application.Current.MainWindow.Content = ViewFrames._LandingPage;
+                    ClearTrace();
                 }
-
-                UpdateCartList();
+                
             }
             else
             {
@@ -167,7 +151,7 @@ namespace WearAndGoS2_WPF.Views.Cabinet
         {
             Random random = new Random();
             const string validCharacters = "BCDFGHJKLMNPQRSTVWXYZ0123456789";
-            return new string(Enumerable.Repeat(validCharacters, 10)
+            return new string(Enumerable.Repeat(validCharacters, 20)
                 .Select(thisString => thisString[random.Next(thisString.Length)]).ToArray());
         }
 
@@ -214,6 +198,31 @@ namespace WearAndGoS2_WPF.Views.Cabinet
                 };
                 await dialog.ShowAsync();
             }
+        }
+
+        private async void ClearTrace()
+        {
+            Models.UserCartContent.CartContent.RemoveAll();
+            Models.UserCartContent.MainUser["Cart"] = Models.UserCartContent.CartContent;
+
+            foreach (var item in Models.UserCartContent.ClientList)
+            {
+                if (item["Owner"].ToString() == Properties.Settings.Default.UserEmail)
+                {
+                    item["Cart"] = Models.UserCartContent.CartContent;
+                    File.WriteAllText("./Data/CartData.json", Models.UserCartContent.ClientList.ToString());
+                }
+            }
+
+            Models.UserCartContent.MainUser.RemoveAll();
+
+            UpdateCartList();
+
+            Properties.Settings.Default.UserEmail = "";
+            Properties.Settings.Default.Save();
+            await Controllers.Auth.Client.LogoutAsync();
+            Application.Current.MainWindow.Content = ViewFrames._LandingPage;
+
         }
     }
 }
