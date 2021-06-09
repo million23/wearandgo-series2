@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Flurl.Http;
+using ModernWpf.Controls;
 using Newtonsoft.Json.Linq;
 
 namespace WearAndGoS2_WPF.Views.Cabinet
@@ -20,7 +21,7 @@ namespace WearAndGoS2_WPF.Views.Cabinet
     /// <summary>
     /// Interaction logic for Browse.xaml
     /// </summary>
-    public partial class Browse : Page
+    public partial class Browse : System.Windows.Controls.Page
     {
         public Browse()
         {
@@ -47,6 +48,20 @@ namespace WearAndGoS2_WPF.Views.Cabinet
                 default:
                     break;
             }
+        }
+
+        private async void RefreshList(object sender, RoutedEventArgs e)
+        {
+            ContentDialog loadingDialog = new ContentDialog
+            {
+                Title="Content Update",
+                Content="Press Escape to update all content"
+            };
+            await loadingDialog.ShowAsync();
+
+            ViewFrames._CabinetIndex.GetItems();
+            
+            
         }
     }
 }

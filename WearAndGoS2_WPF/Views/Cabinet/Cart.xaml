@@ -10,15 +10,16 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Loaded="PageLoaded"
+      
       Title="Cart">
 
-    <Grid Background="#efbbad">
+    <Grid Background="#fffff6">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.5*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -30,15 +31,19 @@
                 </StackPanel>
             </GroupBox>
         </WrapPanel>-->
-        <WrapPanel Margin="10" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Stretch">
-            <GroupBox Header="Transaction Details">
+        <WrapPanel Margin="10" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Stretch">
+            <GroupBox Header="Transaction Detail">
                 <StackPanel Orientation="Vertical" MinWidth="300">
+                    <Button Content="Proceed to Counter" Click="ProceedToCounter" Background="#b7d0de" BorderBrush="#b7d0de" Style="{DynamicResource MaterialDesignRaisedButton}"/>
+                    <Button Content="Remove all items" Click="RemoveAllItems" Background="#ffcaaf" BorderBrush="#ffcaaf" Margin="0 50 0 75" Style="{DynamicResource MaterialDesignRaisedButton}"/>
 
+                    <TextBlock Text="Total Sum" Style="{DynamicResource MaterialDesignHeadline5TextBlock}"/>
+                    <TextBlock Name="ui_totalSum" Foreground="red" Text="P 99999999" Style="{DynamicResource MaterialDesignHeadline4TextBlock}"/>
                 </StackPanel>
             </GroupBox>
         </WrapPanel>
 
-        <GroupBox Header="Cart Content"  Margin="10" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Stretch">
+        <GroupBox Header="Cart Content"  Margin="10" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Stretch">
             <ScrollViewer >
                     <StackPanel HorizontalAlignment="Left" Name="CartList">
                         <items:CartItem/>

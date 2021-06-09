@@ -73,6 +73,7 @@ namespace WearAndGoS2_WPF.Views.Cabinet.Items
                     jsonInput["Variant"] = VariantBox.Text;
                     jsonInput["Price"] = Price.ToString();
                     jsonInput["Type"] = Type;
+                    jsonInput["Image"] = prod_image.Source.ToString();
 
             
                     Models.UserCartContent.CartContent.Add(jsonInput);

@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
         <ui:NavigationView Background="#e5987f" Grid.Row="0" ItemInvoked="ChangePane" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" PaneDisplayMode="top" >
             <ui:NavigationView.MenuItems>
-                <ui:NavigationViewItemHeader Name="FrameHeader" Content="Title of the Frame" Width="350"/>
+                <ui:NavigationViewItemHeader Name="FrameHeader" Content="Title of the Frame" Width="300"/>
                 <ui:NavigationViewItemSeparator Margin="10 0"/>
                 <ui:NavigationViewItem Margin="5 0" Content="Browser" Tag="Browser"/>
                 <ui:NavigationViewItem Margin="5 0" Content="My Cart" Tag="Cart"/>

@@ -84,25 +84,29 @@ namespace WearAndGoS2_WPF.Views.Cabinet
 
             }
         }
-        private async void GetItems()
+        public async void GetItems()
         {
+
+            string url = "https://api.npoint.io/64f6f7ad3975e962ffc9";
+            //string url = "https://api.jsonbin.io/b/60b4b1f7b104de5acdda6d9e/latest";
             // clear browser UI
             ViewFrames._CabinetBrowseMen.ItemPanel.Children.Clear();
             ViewFrames._CabinetBrowseWomen.ItemPanel.Children.Clear();
             ViewFrames._CabinetBrowseFootwear.ItemPanel.Children.Clear();
 
             // load database
-            string result = await "https://api.npoint.io/64f6f7ad3975e962ffc9"
-                .GetStringAsync();
+            //await url.WithHeader("X-Master-Key", "$2b$10$TmKEJtRFh2jvh.gOZfI6c.FQosCyM2L6U88iqYEGB6LBYbTB55X5.").GetJsonAsync();
+            //dynamic result = await url.WithHeaders(new { X_Master_Key = "$2b$10$fTXTmJDIu2hwzf.B/X486u2ACAj.T4zCm2GxAh4z.0MTZ7ViNrn0S", Accept = "text/json" }).GetJsonAsync();
+            string result = await url.GetStringAsync();
 
-            JObject itemsDatabase = JObject.Parse(result);
+            JObject itemsDatabase = JObject.Parse(File.ReadAllText("./Data/MainDatabase.json"));
             for (int i = 0; i < itemsDatabase["items"].Count(); i++)
             {
                 //MessageBox.Show((string)itemsDatabase["items"][i]["variant"].Count().ToString());
                 if ((string)itemsDatabase["items"][i]["kind"] == "1")
                 {
                     var variants = itemsDatabase["items"][i]["variant"];
-                    var browseritem = new Cabinet.Items.BrowserItem();
+                    var browseritem = new Items.BrowserItem();
 
                     browseritem.prod_image.Source = new BitmapImage(new System.Uri((string)itemsDatabase["items"][i]["image"]));
                     browseritem.prod_name.Text = (string)itemsDatabase["items"][i]["name"];

@@ -22,6 +22,11 @@
                 <ui:NavigationViewItem Tag="Women" Content="Women's"/>
                 <ui:NavigationViewItem Tag="Footwear" Content="Footwear"/>
             </ui:NavigationView.MenuItems>
+            <ui:NavigationView.PaneFooter>
+                <ui:CommandBar>
+                    <ui:AppBarButton Click="RefreshList" Icon="refresh" Label="Refresh"/>
+                </ui:CommandBar>
+            </ui:NavigationView.PaneFooter>
         </ui:NavigationView>
         <ui:Frame Name="BrowseFrame" Grid.Row="1"/>
     </Grid>

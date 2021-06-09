@@ -28,18 +28,38 @@ namespace WearAndGoS2_WPF.Views.Cabinet.Items
         }
         public int Index { get; set; }
 
-        private void RemoveItem(object sender, RoutedEventArgs e)
+        private async void RemoveItem(object sender, RoutedEventArgs e)
         {
-            Models.UserCartContent.ClientList = JArray.Parse(File.ReadAllText("./Data/CartData.json"));
+            var dialog = new ModernWpf.Controls.ContentDialog
+            {
+                Title = "Confirm Remove",
+                Content = "Do you want to remove this item?",
+                PrimaryButtonText = "Yes",
+                CloseButtonText = "No",
+                DefaultButton = ModernWpf.Controls.ContentDialogButton.Close
+            };
 
-            Models.UserCartContent.CartContent[Index].Remove();
+            var result = await dialog.ShowAsync();
+            if (result == ModernWpf.Controls.ContentDialogResult.Primary)
+            {
 
-            Models.UserCartContent.MainUser["Cart"] = Models.UserCartContent.CartContent;
-            Models.UserCartContent.ClientList.Add(Models.UserCartContent.MainUser);
+                Models.UserCartContent.ClientList = JArray.Parse(File.ReadAllText("./Data/CartData.json"));
+                Models.UserCartContent.CartContent[Index].Remove();
+                Models.UserCartContent.MainUser["Cart"] = Models.UserCartContent.CartContent;
 
-            File.WriteAllText("./Data/CartData.json", Models.UserCartContent.ClientList.ToString());
+                foreach (var item in Models.UserCartContent.ClientList)
+                {
+                    if (item["Owner"].ToString() == Properties.Settings.Default.UserEmail)
+                    {
+                        item["Cart"] = Models.UserCartContent.CartContent;
+                        File.WriteAllText("./Data/CartData.json", Models.UserCartContent.ClientList.ToString());
+                    }
+                }
 
-            ViewFrames._CabinetCart.UpdateCartList();
+
+                ViewFrames._CabinetCart.UpdateCartList();
+            }
+
         }
     }
 }

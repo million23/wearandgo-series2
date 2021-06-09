@@ -24,7 +24,7 @@
             </StackPanel>
 
             <StackPanel Grid.Column="1" Background="gray">
-                <Image Height="125" Stretch="UniformToFill" Source="https://via.placeholder.com/200x250"/>
+                <Image Height="125" Name="out_image" Stretch="UniformToFill" Source="https://via.placeholder.com/200x250"/>
             </StackPanel>
 
             <StackPanel Margin="20 0 20 0" Grid.Column="2" VerticalAlignment="Center">
