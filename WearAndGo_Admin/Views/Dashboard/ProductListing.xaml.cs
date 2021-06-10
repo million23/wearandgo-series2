@@ -207,5 +207,10 @@ namespace WearAndGo_Admin.Views.Dashboard
 
             dataGrid.ItemsSource = thisTable.DefaultView;
         }
+
+        private void PageLoad(object sender, RoutedEventArgs e)
+        {
+            ShowAllData(null, null);
+        }
     }
 }

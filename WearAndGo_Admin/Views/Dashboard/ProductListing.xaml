@@ -8,6 +8,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:ui="http://schemas.modernwpf.com/2019"
       d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="PageLoad"
       Title="ProductListing" >
 
     <ui:SplitView Name="SidePane" IsPaneOpen="false" DisplayMode="Overlay" OpenPaneLength="500" LightDismissOverlayMode="On">
@@ -31,7 +32,7 @@
                 </ui:NavigationView.PaneFooter>
             </ui:NavigationView>
 
-            <DataGrid ui:DataGridHelper.UseModernColumnStyles="True" Margin="10 40 10 10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" Name="dataGrid" AlternatingRowBackground="LightBlue" AlternationCount="2">
+            <DataGrid ui:DataGridHelper.UseModernColumnStyles="True" Margin="10 40 10 10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" Name="dataGrid" AlternatingRowBackground="AliceBlue" AlternationCount="2">
                 
             </DataGrid>
 

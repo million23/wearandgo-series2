@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +26,32 @@ namespace WearAndGo_Admin.Views.Dashboard
         public TransactionHistory()
         {
             InitializeComponent();
+        }
+
+        private void GetData(object sender, RoutedEventArgs e)
+        {
+            MainGrid.ItemsSource = null;
+            string MyDocumentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var fromFile = JObject.Parse(File.ReadAllText($"{MyDocumentsPath}/WearAndGoS2/TransactionHistory.json"));
+
+            var thisTable = new DataTable();
+            thisTable.Columns.Add("Transaction ID");
+            thisTable.Columns.Add("Owner");
+            thisTable.Columns.Add("Date Purchased");
+            thisTable.Columns.Add("Total Purchase");
+
+            foreach (var item in fromFile["History"])
+            {
+                var row = thisTable.NewRow();
+                row["Transaction ID"] = item["TransactionID"];
+                row["Owner"] = item["User"];
+                row["Date Purchased"] = item["Date"];
+                row["Total Purchase"] = item["Total"];
+
+                thisTable.Rows.Add(row);
+            }
+
+            MainGrid.ItemsSource = thisTable.DefaultView;
         }
     }
 }
