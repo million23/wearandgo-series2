@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,9 +26,9 @@ namespace WearAndGo_Admin.Views
             InitializeComponent();
         }
 
-        private void PageLoad(object sender, RoutedEventArgs e)
+        public void PageLoad(object sender, RoutedEventArgs e)
         {
-            DashboardFrame.Navigate(Models.DashboardFrames._Index);
+            DashboardFrame.Navigate(Models.DashboardFrames._ProductListing);
         }
 
         private void ChangePanes(ModernWpf.Controls.NavigationView sender, ModernWpf.Controls.NavigationViewItemInvokedEventArgs args)

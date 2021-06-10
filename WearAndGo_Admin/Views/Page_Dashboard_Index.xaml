@@ -9,21 +9,75 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Loaded="PageLoad"
+      
       Title="Page_Dashboard_Index">
+    <Page.Resources>
+        <Storyboard x:Key="PageLoad">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuinticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuinticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="grid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.95">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuinticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuinticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="grid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.95">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuinticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuinticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource PageLoad}"/>
+        </EventTrigger>
+    </Page.Triggers>
 
-    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-     
-            <ui:NavigationView ItemInvoked="ChangePanes" Panel.ZIndex="3" PaneDisplayMode="Top" PaneTitle="Menu" IsSettingsVisible="False" IsBackEnabled="False" IsBackButtonVisible="Collapsed">
-                <ui:NavigationView.MenuItems>
-                    <ui:NavigationViewItem Content="Home" Icon="Home"/>
-                    <ui:NavigationViewItemSeparator/>
-                    <ui:NavigationViewItem Content="Product Listing" Icon="Shop"/>
-                    <ui:NavigationViewItem Content="Transaction History" Icon="Clock"/>
-                    <ui:NavigationViewItem Content="Access Accounts" Icon="People"/>
-                </ui:NavigationView.MenuItems>
-            </ui:NavigationView>
-            
-            <ui:Frame Margin="0 40 0 0" Name="DashboardFrame"/>
-        
+    <Grid x:Name="grid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+
+        <ui:NavigationView Name="Navigator" ItemInvoked="ChangePanes" Panel.ZIndex="3" PaneDisplayMode="Top" PaneTitle="Menu" IsSettingsVisible="False" IsBackEnabled="False" IsBackButtonVisible="Collapsed">
+            <ui:NavigationView.MenuItems>
+                <ui:NavigationViewItem Content="Home" Icon="Home"/>
+                <ui:NavigationViewItemSeparator/>
+                <ui:NavigationViewItem Content="Product Listing" Icon="Shop"/>
+                <ui:NavigationViewItem Content="Transaction History" Icon="Clock"/>
+                <ui:NavigationViewItem Content="Access Accounts" Name="AccessAccounts" Icon="People"/>
+            </ui:NavigationView.MenuItems>
+        </ui:NavigationView>
+
+        <ui:Frame Margin="0 40 0 0" Name="DashboardFrame"/>
+
     </Grid>
 </Page>

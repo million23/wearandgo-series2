@@ -6,9 +6,41 @@
       xmlns:local="clr-namespace:WearAndGo_Admin.Views.Dashboard"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="GetData"
       Title="Index">
 
-    <Grid Background="Gray">
-        
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Margin="20" Header="Dashboard" Grid.Column="0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="20 0 0 0">
+                <StackPanel Margin="0 60 0 0" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock VerticalAlignment="Center" Style="{DynamicResource MaterialDesignHeadline6TextBlock}" Width="200" Text="Account Holder" />
+                    <TextBlock Name="out_accountholder" VerticalAlignment="Center" Style="{DynamicResource MaterialDesignHeadline6TextBlock}" FontWeight="Light" Text="ThisHOLDER"/>
+                </StackPanel>
+                <StackPanel Margin="0 20 0 0" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock VerticalAlignment="Center" Style="{DynamicResource MaterialDesignHeadline6TextBlock}" Width="200" Text="Account ID" />
+                    <TextBlock Name="out_accountID" VerticalAlignment="Center" Style="{DynamicResource MaterialDesignHeadline6TextBlock}" FontWeight="Light" Text="Administrator"/>
+                </StackPanel>
+                <StackPanel Margin="0 20 0 0" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock VerticalAlignment="Center" Style="{DynamicResource MaterialDesignHeadline6TextBlock}" Width="200" Text="Account Privilege" />
+                    <TextBlock Name="out_accountType" VerticalAlignment="Center" Style="{DynamicResource MaterialDesignHeadline6TextBlock}" FontWeight="Light" Text="Administrator"/>
+                </StackPanel>
+                <StackPanel Margin="0 60 0 0" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Button Click="LogOut" Foreground="red" BorderBrush="red"  Style="{DynamicResource MaterialDesignOutlinedButton}" Width="300" HorizontalAlignment="Stretch" Content="Log Out"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Margin="20" Header="Summary" Grid.Column="1">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Margin="20 0 0 0">
+                <StackPanel Margin="0 60 0 0" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock VerticalAlignment="Center" Style="{DynamicResource MaterialDesignHeadline6TextBlock}" Width="200" Text="Total Sale" />
+                    <TextBlock VerticalAlignment="Center" Style="{DynamicResource MaterialDesignHeadline6TextBlock}" FontWeight="Light" Text="SALESSS"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
     </Grid>
 </Page>

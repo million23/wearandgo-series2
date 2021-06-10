@@ -34,5 +34,17 @@ namespace WearAndGo_Admin.Properties {
                 this["AdminJsonData"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CanEditAccounts {
+            get {
+                return ((bool)(this["CanEditAccounts"]));
+            }
+            set {
+                this["CanEditAccounts"] = value;
+            }
+        }
     }
 }

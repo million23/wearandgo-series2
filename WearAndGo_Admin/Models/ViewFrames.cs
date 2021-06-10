@@ -16,4 +16,9 @@ namespace WearAndGo_Admin.Models
         public static Page _TransactionHistory = new Views.Dashboard.TransactionHistory();
 
     }
+    class ProductListingFrames
+    {
+        public static Page _SP_PL_AddItem = new Views.Dashboard.ProductListingSidepane.ProductListingSidepage_AddItem();
+
+    }
 }

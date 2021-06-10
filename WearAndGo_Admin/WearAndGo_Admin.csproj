@@ -65,6 +65,9 @@
     <Compile Include="Views\Dashboard\ProductListing.xaml.cs">
       <DependentUpon>ProductListing.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dashboard\ProductListingSidepane\ProductListingSidepage_AddItem.xaml.cs">
+      <DependentUpon>ProductListingSidepage_AddItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dashboard\TransactionHistory.xaml.cs">
       <DependentUpon>TransactionHistory.xaml</DependentUpon>
     </Compile>
@@ -98,6 +101,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Dashboard\ProductListing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dashboard\ProductListingSidepane\ProductListingSidepage_AddItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,5 +163,6 @@
       <Version>11.0.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,6 +7,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:ui="http://schemas.modernwpf.com/2019"
       mc:Ignorable="d" 
+      Loaded="FocusOnUsername"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Page_Intro">
     <Page.Resources>
@@ -24,7 +25,7 @@
                 </EasingDoubleKeyFrame>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="grid">
-                <EasingDoubleKeyFrame KeyTime="0" Value="1.2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1.15">
                     <EasingDoubleKeyFrame.EasingFunction>
                         <QuinticEase EasingMode="EaseOut"/>
                     </EasingDoubleKeyFrame.EasingFunction>
@@ -36,7 +37,7 @@
                 </EasingDoubleKeyFrame>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="grid">
-                <EasingDoubleKeyFrame KeyTime="0" Value="1.2">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1.15">
                     <EasingDoubleKeyFrame.EasingFunction>
                         <QuinticEase EasingMode="EaseOut"/>
                     </EasingDoubleKeyFrame.EasingFunction>
@@ -70,8 +71,8 @@
                 <TextBlock Style="{DynamicResource MaterialDesignHeadline5TextBlock}" Text="Log In to Wear and Go"/>
                 <TextBlock Style="{DynamicResource MaterialDesignCaptionTextBlock}" Text="Administrator Window"/>
 
-                <TextBox Name="in_username" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Username" Margin="0 20 0 0"/>
-                <PasswordBox Name="in_password" HorizontalAlignment="Stretch" Style="{DynamicResource MaterialDesignFloatingHintPasswordBox}" materialDesign:HintAssist.Hint="Password" />
+                <TextBox GotFocus="SelectAllUsername" Name="in_username" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Username" Margin="0 20 0 0"/>
+                <PasswordBox GotFocus="SelecAllPassword" Name="in_password" HorizontalAlignment="Stretch" Style="{DynamicResource MaterialDesignFloatingHintPasswordBox}" materialDesign:HintAssist.Hint="Password" />
                 <TextBlock Margin="0 10 0 0" Style="{DynamicResource MaterialDesignOverlineTextBlock}" Text="***If you lost your account, please approach to your system administrator to recover your account" TextWrapping="Wrap"/>
 
                 <Button Click="CheckAccount" Style="{DynamicResource MaterialDesignRaisedButton}" Margin="10 50 10 0" HorizontalAlignment="Stretch" Content="Log In"/>

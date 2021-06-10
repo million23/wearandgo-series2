@@ -127,7 +127,7 @@ namespace WearAndGoS2_WPF.Views.Cabinet
 
                     File.WriteAllText("./Data/TransactionHistory.json", fromData.ToString());
                     File.WriteAllText($"{MyDocumentsPath}/WearAndGoS2/TransactionHistory.json", fromData.ToString());
-
+                    //File.WriteAllText
 
 
                     // cache clear and user log out

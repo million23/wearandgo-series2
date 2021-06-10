@@ -97,13 +97,14 @@ namespace WearAndGoS2_WPF.Views.Cabinet
             // load database
             //await url.WithHeader("X-Master-Key", "$2b$10$TmKEJtRFh2jvh.gOZfI6c.FQosCyM2L6U88iqYEGB6LBYbTB55X5.").GetJsonAsync();
             //dynamic result = await url.WithHeaders(new { X_Master_Key = "$2b$10$fTXTmJDIu2hwzf.B/X486u2ACAj.T4zCm2GxAh4z.0MTZ7ViNrn0S", Accept = "text/json" }).GetJsonAsync();
+            string MyDocumentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             string result = await url.GetStringAsync();
 
-            JObject itemsDatabase = JObject.Parse(File.ReadAllText("./Data/MainDatabase.json"));
+            JObject itemsDatabase = JObject.Parse(File.ReadAllText($"{MyDocumentsPath}/WearAndGoS2/MainDatabase.json"));
             for (int i = 0; i < itemsDatabase["items"].Count(); i++)
             {
                 //MessageBox.Show((string)itemsDatabase["items"][i]["variant"].Count().ToString());
-                if ((string)itemsDatabase["items"][i]["kind"] == "1")
+                if ((string)itemsDatabase["items"][i]["kind"] == "M")
                 {
                     var variants = itemsDatabase["items"][i]["variant"];
                     var browseritem = new Items.BrowserItem();
@@ -129,7 +130,7 @@ namespace WearAndGoS2_WPF.Views.Cabinet
                     ViewFrames._CabinetBrowseMen.ItemPanel.Children.Add(browseritem);
 
                 }
-                if ((string)itemsDatabase["items"][i]["kind"] == "2")
+                if ((string)itemsDatabase["items"][i]["kind"] == "W")
                 {
                     var variants = itemsDatabase["items"][i]["variant"];
                     var browseritem = new Cabinet.Items.BrowserItem();
@@ -154,7 +155,7 @@ namespace WearAndGoS2_WPF.Views.Cabinet
                     // append to browser
                     ViewFrames._CabinetBrowseWomen.ItemPanel.Children.Add(browseritem);
                 }
-                if ((string)itemsDatabase["items"][i]["kind"] == "3")
+                if ((string)itemsDatabase["items"][i]["kind"] == "F")
                 {
                     var variants = itemsDatabase["items"][i]["variant"];
                     var browseritem = new Cabinet.Items.BrowserItem();

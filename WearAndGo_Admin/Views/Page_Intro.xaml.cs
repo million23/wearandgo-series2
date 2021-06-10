@@ -38,15 +38,11 @@ namespace WearAndGo_Admin.Views
 
                 AdminName = (string)admindata["AccountHolder"];
 
+                in_username.Text = string.Empty;
+                in_password.Password = string.Empty;
 
-                var dialog = new ModernWpf.Controls.ContentDialog
-                {
-                    Title = "Welcome Message",
-                    Content = $"Hello {AdminName}, please proceed to the dashboard",
-                    CloseButtonText = "Hello!",
-                    DefaultButton = ModernWpf.Controls.ContentDialogButton.Close
-                };
-                await dialog.ShowAsync();
+                var accountpriv = (ModernWpf.Controls.NavigationViewItem)Models.ViewFrames._View_Dashboard_Index.FindName("AccessAccounts");
+                accountpriv.Visibility = (bool)admindata["CanCreateAccounts"] ? Visibility.Visible : Visibility.Collapsed;
                 Application.Current.MainWindow.Content = Models.ViewFrames._View_Dashboard_Index;
             }
             else
@@ -97,6 +93,21 @@ namespace WearAndGo_Admin.Views
             }
 
             return returnValue;
+        }
+
+        private void FocusOnUsername(object sender, RoutedEventArgs e)
+        {
+            in_username.Focus();
+        }
+
+        private void SelectAllUsername(object sender, RoutedEventArgs e)
+        {
+            in_username.SelectAll();
+        }
+
+        private void SelecAllPassword(object sender, RoutedEventArgs e)
+        {
+            in_password.SelectAll();
         }
     }
 }

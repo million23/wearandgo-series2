@@ -41,9 +41,7 @@ namespace WearAndGoS2_WPF
                 {
                     File.Create($"{MyDocumentsPath}/WearAndGoS2/TransactionHistory.json");
                 }
-
-
-            }
+            } 
         }
     }
 }
