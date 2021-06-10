@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WearAndGoS2_WPF", "WearAndG
 EndProject
 Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "WearAndGoS2_Packager", "WearAndGoS2_Packager\WearAndGoS2_Packager.wapproj", "{1DBFC9A8-7EB6-44D4-8FAB-5D026D414181}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WearAndGo_Admin", "WearAndGo_Admin\WearAndGo_Admin.csproj", "{80A16C6D-86EB-45DA-9FE6-F85F0CFB8CC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,18 @@ Global
 		{1DBFC9A8-7EB6-44D4-8FAB-5D026D414181}.Release|x86.ActiveCfg = Release|x86
 		{1DBFC9A8-7EB6-44D4-8FAB-5D026D414181}.Release|x86.Build.0 = Release|x86
 		{1DBFC9A8-7EB6-44D4-8FAB-5D026D414181}.Release|x86.Deploy.0 = Release|x86
+		{80A16C6D-86EB-45DA-9FE6-F85F0CFB8CC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80A16C6D-86EB-45DA-9FE6-F85F0CFB8CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80A16C6D-86EB-45DA-9FE6-F85F0CFB8CC3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{80A16C6D-86EB-45DA-9FE6-F85F0CFB8CC3}.Debug|x64.Build.0 = Debug|Any CPU
+		{80A16C6D-86EB-45DA-9FE6-F85F0CFB8CC3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{80A16C6D-86EB-45DA-9FE6-F85F0CFB8CC3}.Debug|x86.Build.0 = Debug|Any CPU
+		{80A16C6D-86EB-45DA-9FE6-F85F0CFB8CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80A16C6D-86EB-45DA-9FE6-F85F0CFB8CC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80A16C6D-86EB-45DA-9FE6-F85F0CFB8CC3}.Release|x64.ActiveCfg = Release|Any CPU
+		{80A16C6D-86EB-45DA-9FE6-F85F0CFB8CC3}.Release|x64.Build.0 = Release|Any CPU
+		{80A16C6D-86EB-45DA-9FE6-F85F0CFB8CC3}.Release|x86.ActiveCfg = Release|Any CPU
+		{80A16C6D-86EB-45DA-9FE6-F85F0CFB8CC3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

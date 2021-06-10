@@ -1,0 +1,29 @@
+﻿<Page x:Class="WearAndGo_Admin.Views.Page_Dashboard_Index"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WearAndGo_Admin.Views"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:ui="http://schemas.modernwpf.com/2019"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="PageLoad"
+      Title="Page_Dashboard_Index">
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+     
+            <ui:NavigationView ItemInvoked="ChangePanes" Panel.ZIndex="3" PaneDisplayMode="Top" PaneTitle="Menu" IsSettingsVisible="False" IsBackEnabled="False" IsBackButtonVisible="Collapsed">
+                <ui:NavigationView.MenuItems>
+                    <ui:NavigationViewItem Content="Home" Icon="Home"/>
+                    <ui:NavigationViewItemSeparator/>
+                    <ui:NavigationViewItem Content="Product Listing" Icon="Shop"/>
+                    <ui:NavigationViewItem Content="Transaction History" Icon="Clock"/>
+                    <ui:NavigationViewItem Content="Access Accounts" Icon="People"/>
+                </ui:NavigationView.MenuItems>
+            </ui:NavigationView>
+            
+            <ui:Frame Margin="0 40 0 0" Name="DashboardFrame"/>
+        
+    </Grid>
+</Page>
