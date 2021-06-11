@@ -24,7 +24,8 @@
                         <ui:AppBarButton Click="ShowMenData" Label="Men's" Icon="Shop"/>
                         <ui:AppBarButton Click="ShowWomenData" Label="Women's" Icon="Shop"/>
                         <ui:AppBarButton Click="ShowFootwearData" Label="Footwears" Icon="Shop"/>
-                        <ui:AppBarSeparator Margin="20 0"/>
+                        <ui:AppBarSeparator />
+                        <ui:AppBarButton Label="Refresh" Icon="Shop"/>
                         <ui:AppBarButton Click="sp_modifyItem" Icon="Refresh" Label="Modify Item"/>
                         <ui:AppBarButton Click="sp_removeItem" Icon="Remove" Label="Remove Item"/>
                         <ui:AppBarButton Click="sp_addItem" Icon="Add" Label="Add Item"/>

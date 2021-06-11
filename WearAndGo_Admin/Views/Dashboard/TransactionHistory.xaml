@@ -5,11 +5,51 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WearAndGo_Admin.Views.Dashboard"
       mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:ui="http://schemas.modernwpf.com/2019"
       d:DesignHeight="450" d:DesignWidth="800"
       Loaded="GetData"
       Title="TransactionHistory">
 
+    <ui:SplitView Name="splitView" IsPaneOpen="False" DisplayMode="Overlay" LightDismissOverlayMode="On" OpenPaneLength="600">
+        <ui:SplitView.Pane>
+            <GroupBox Header="Find Transaction Information" Margin="20">
+                <StackPanel Margin="20 20 0 0">
+                    <TextBox Name="search_transactionID" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Transaction ID"/>
+                    <TextBox Name="search_owner" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Owner"/>
+
+                    <Button Click="SearchFromList" Background="CadetBlue" BorderBrush="CadetBlue" Foreground="white" HorizontalAlignment="Stretch" Style="{DynamicResource MaterialDesignRaisedButton}" Margin="0 50 0 0">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon VerticalAlignment="Center" Kind="Search"/>
+                            <TextBlock Margin="10 0 0 0" Text="Find Transaction"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </GroupBox>
+        </ui:SplitView.Pane>
     <Grid >
-        <DataGrid Name="MainGrid" AlternationCount="2" AlternatingRowBackground="AliceBlue" CanUserDeleteRows="False" CanUserAddRows="False" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="10 0" HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="0">
+            <Button Click="FindInList" Padding="50 5" Margin="10 0">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon VerticalAlignment="Center" Kind="Search"/>
+                    <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Text="Find"/>
+                </StackPanel>
+            </Button>
+            <Button Click="RefreshList" Padding="50 5" Margin="10 0">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon VerticalAlignment="Center" Kind="Refresh"/>
+                    <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Text="Refresh List"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        
+        <DataGrid Name="MainGrid" AlternationCount="2" Grid.Row="1" AlternatingRowBackground="AliceBlue" CanUserDeleteRows="False" CanUserAddRows="False" />
     </Grid>
+    </ui:SplitView>
+
 </Page>
