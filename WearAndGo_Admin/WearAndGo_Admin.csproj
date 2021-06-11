@@ -68,6 +68,12 @@
     <Compile Include="Views\Dashboard\ProductListingSidepane\ProductListingSidepage_AddItem.xaml.cs">
       <DependentUpon>ProductListingSidepage_AddItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dashboard\ProductListingSidepane\ProductListingSIdepage_ModifyItem.xaml.cs">
+      <DependentUpon>ProductListingSIdepage_ModifyItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\ProductListingSidepane\ProductListingSidepage_RemoveItem.xaml.cs">
+      <DependentUpon>ProductListingSidepage_RemoveItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dashboard\TransactionHistory.xaml.cs">
       <DependentUpon>TransactionHistory.xaml</DependentUpon>
     </Compile>
@@ -105,6 +111,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Dashboard\ProductListingSidepane\ProductListingSidepage_AddItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dashboard\ProductListingSidepane\ProductListingSIdepage_ModifyItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dashboard\ProductListingSidepane\ProductListingSidepage_RemoveItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

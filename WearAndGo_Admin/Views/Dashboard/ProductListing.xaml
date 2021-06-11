@@ -11,7 +11,7 @@
       Loaded="PageLoad"
       Title="ProductListing" >
 
-    <ui:SplitView Name="SidePane" IsPaneOpen="false" DisplayMode="Overlay" OpenPaneLength="500" LightDismissOverlayMode="On">
+    <ui:SplitView Name="SidePane" PanePlacement="Right" IsPaneOpen="false" DisplayMode="Overlay" OpenPaneLength="500" LightDismissOverlayMode="On">
         <ui:SplitView.Pane>
             <Frame Name="SideFrame"/>
         </ui:SplitView.Pane>
@@ -33,9 +33,7 @@
                 </ui:NavigationView.PaneFooter>
             </ui:NavigationView>
 
-            <DataGrid ui:DataGridHelper.UseModernColumnStyles="True" Margin="10 40 10 10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" Name="dataGrid" AlternatingRowBackground="AliceBlue" AlternationCount="2">
-                
-            </DataGrid>
+            <DataGrid IsReadOnly="True" ui:DataGridHelper.UseModernColumnStyles="True" Margin="10 40 10 10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" Name="dataGrid" AlternatingRowBackground="AliceBlue" AlternationCount="2" />
 
 
             <!--<GroupBox Margin="20 60 20 20" Header="Modify Items">

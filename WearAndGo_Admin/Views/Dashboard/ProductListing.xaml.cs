@@ -30,11 +30,13 @@ namespace WearAndGo_Admin.Views.Dashboard
         private void sp_modifyItem(object sender, RoutedEventArgs e)
         {
             SidePane.IsPaneOpen = true;
+            SideFrame.Navigate(Models.ProductListingFrames._SP_PL_ModifyItem);
         }
 
         private void sp_removeItem(object sender, RoutedEventArgs e)
         {
             SidePane.IsPaneOpen = true;
+            SideFrame.Navigate(Models.ProductListingFrames._SP_PL_RemoveItem);
         }
 
         private void sp_addItem(object sender, RoutedEventArgs e)

@@ -19,6 +19,8 @@ namespace WearAndGo_Admin.Models
     class ProductListingFrames
     {
         public static Page _SP_PL_AddItem = new Views.Dashboard.ProductListingSidepane.ProductListingSidepage_AddItem();
+        public static Page _SP_PL_RemoveItem = new Views.Dashboard.ProductListingSidepane.ProductListingSidepage_RemoveItem();
+        public static Page _SP_PL_ModifyItem = new Views.Dashboard.ProductListingSidepane.ProductListingSIdepage_ModifyItem();
 
     }
 }
