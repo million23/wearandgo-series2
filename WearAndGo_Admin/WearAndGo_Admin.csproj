@@ -59,6 +59,15 @@
     <Compile Include="Views\Dashboard\Accounts.xaml.cs">
       <DependentUpon>Accounts.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dashboard\AccountsSidepane\AccountsSidepade_RemoveAccount.xaml.cs">
+      <DependentUpon>AccountsSidepade_RemoveAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\AccountsSidepane\AccountsSidepane_AddAccount.xaml.cs">
+      <DependentUpon>AccountsSidepane_AddAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\AccountsSidepane\AccountsSidepane_ModifyAccount.xaml.cs">
+      <DependentUpon>AccountsSidepane_ModifyAccount.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dashboard\Index.xaml.cs">
       <DependentUpon>Index.xaml</DependentUpon>
     </Compile>
@@ -99,6 +108,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\Dashboard\Accounts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dashboard\AccountsSidepane\AccountsSidepade_RemoveAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dashboard\AccountsSidepane\AccountsSidepane_AddAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dashboard\AccountsSidepane\AccountsSidepane_ModifyAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

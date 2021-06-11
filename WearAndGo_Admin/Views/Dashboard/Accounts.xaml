@@ -4,11 +4,32 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WearAndGo_Admin.Views.Dashboard"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:ui="http://schemas.modernwpf.com/2019"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="GetData"
       Title="Accounts">
 
-    <Grid Background="LightYellow">
-        
-    </Grid>
+    <ui:SplitView Name="SidePane" PanePlacement="Right" IsPaneOpen="false" DisplayMode="Overlay" OpenPaneLength="500" LightDismissOverlayMode="On">
+        <ui:SplitView.Pane>
+            <Frame Name="SideFrame"/>
+        </ui:SplitView.Pane>
+
+        <Grid>
+            <ui:NavigationView Margin="0 0 0 40" PaneDisplayMode="Top" IsBackEnabled="False" IsBackButtonVisible="Collapsed" IsSettingsVisible="False">
+                <ui:NavigationView.PaneFooter>
+                    <ui:CommandBar>
+                        <ui:AppBarButton Click="RefreshList" Label="Refresh" Icon="Refresh" />
+                        <ui:AppBarButton Click="sp_modifyItem" Icon="Download" Label="Modify Account"/>
+                        <ui:AppBarButton Click="sp_removeItem" Icon="Remove" Label="Remove Account"/>
+                        <ui:AppBarButton Click="sp_addItem" Icon="Add" Label="Add Account"/>
+                    </ui:CommandBar>
+                </ui:NavigationView.PaneFooter>
+            </ui:NavigationView>
+
+            <DataGrid IsReadOnly="True" ui:DataGridHelper.UseModernColumnStyles="True" Margin="10 40 10 10" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" Name="dataGrid" AlternatingRowBackground="AliceBlue" AlternationCount="2" />
+
+        </Grid>
+    </ui:SplitView>
 </Page>

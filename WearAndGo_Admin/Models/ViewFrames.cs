@@ -21,6 +21,11 @@ namespace WearAndGo_Admin.Models
         public static Page _SP_PL_AddItem = new Views.Dashboard.ProductListingSidepane.ProductListingSidepage_AddItem();
         public static Page _SP_PL_RemoveItem = new Views.Dashboard.ProductListingSidepane.ProductListingSidepage_RemoveItem();
         public static Page _SP_PL_ModifyItem = new Views.Dashboard.ProductListingSidepane.ProductListingSIdepage_ModifyItem();
-
+    }
+    class AccountFrames
+    {
+        public static Page _SP_A_AddItem = new Views.Dashboard.AccountsSidepane.AccountsSidepane_AddAccount();
+        public static Page _SP_A_RemoveItem = new Views.Dashboard.AccountsSidepane.AccountsSidepade_RemoveAccount();
+        public static Page _SP_A_ModifyItem = new Views.Dashboard.AccountsSidepane.AccountsSidepane_ModifyAccount();
     }
 }
