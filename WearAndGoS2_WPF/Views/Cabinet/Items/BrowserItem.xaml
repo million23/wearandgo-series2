@@ -25,7 +25,7 @@
                 <TextBlock Style="{DynamicResource MaterialDesignCaptionTextBlock}" Name="prod_id" FontFamily="Consolas"  Text="Product ID"/>
                 <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}" Name="prod_name" Text="Product Name"/>
                 <TextBlock Style="{DynamicResource MaterialDesignSubtitle1TextBlock}" Name="prod_price" Text="Product Price"/>
-                <ComboBox Name="VariantBox" Margin="0 5" material:HintAssist.Hint="Variant" Style="{DynamicResource MaterialDesignFloatingHintComboBox}" HorizontalAlignment="Stretch" ui:ComboBoxHelper.KeepInteriorCornersSquare="True">
+                <ComboBox Name="VariantBox" Margin="0 5" BorderBrush="#03A9F4" material:HintAssist.Hint="Variant" Style="{DynamicResource MaterialDesignOutlinedComboBox}" HorizontalAlignment="Stretch" ui:ComboBoxHelper.KeepInteriorCornersSquare="True">
                     <ComboBoxItem Content="askldjlaksjd"/>
                 </ComboBox>
                 <Button Style="{DynamicResource MaterialDesignFlatMidBgButton}" Click="AddToCart" Content="Add to Cart" HorizontalAlignment="Stretch"/>

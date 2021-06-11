@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using ModernWpf.Controls;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,7 +22,7 @@ namespace WearAndGoS2_WPF.Views.Cabinet
     /// <summary>
     /// Interaction logic for Cart.xaml
     /// </summary>
-    public partial class Cart : Page
+    public partial class Cart : System.Windows.Controls.Page
     {
         public Cart()
         {
@@ -127,8 +128,15 @@ namespace WearAndGoS2_WPF.Views.Cabinet
 
                     File.WriteAllText("./Data/TransactionHistory.json", fromData.ToString());
                     File.WriteAllText($"{MyDocumentsPath}/WearAndGoS2/TransactionHistory.json", fromData.ToString());
-                    //File.WriteAllText
 
+                    // show transaction ID for cashout
+                    var transactionOut = new ContentDialog
+                    {
+                        Title = $"{jsonInput["TransactionID"].ToString()}",
+                        Content = "Here is your Transaction ID.\n\nPlease keep this ID to verify in checkout",
+                        CloseButtonText = "Close and Log Out"
+                    };
+                    await transactionOut.ShowAsync();
 
                     // cache clear and user log out
                     ClearTrace();

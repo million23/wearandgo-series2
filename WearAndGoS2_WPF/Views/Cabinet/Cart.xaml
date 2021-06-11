@@ -23,14 +23,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!--<WrapPanel Margin="10" Grid.Column="0" HorizontalAlignment="Stretch">
-            <GroupBox Header="Cart Commands">
-                <StackPanel Orientation="Vertical" MinWidth="300">
-                    <Button Style="{DynamicResource MaterialDesignRaisedButton}" Foreground="#F7DDD5" Margin="10">Remove Selected</Button>
-                    <Button Style="{DynamicResource MaterialDesignRaisedButton}" Foreground="#F7DDD5" Margin="10">Clear Cart</Button>
-                </StackPanel>
-            </GroupBox>
-        </WrapPanel>-->
         <WrapPanel Margin="10" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Stretch">
             <GroupBox Header="Transaction Detail">
                 <StackPanel Orientation="Vertical" MinWidth="300">
@@ -46,10 +38,7 @@
         <GroupBox Header="Cart Content"  Margin="10" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Stretch">
             <ScrollViewer >
                     <StackPanel HorizontalAlignment="Left" Name="CartList">
-                        <items:CartItem/>
-                        <items:CartItem/>
-                        <items:CartItem/>
-                        <items:CartItem/>
+                        
                     </StackPanel>
                 </ScrollViewer>
         </GroupBox>

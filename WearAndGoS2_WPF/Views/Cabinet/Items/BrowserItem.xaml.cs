@@ -81,6 +81,15 @@ namespace WearAndGoS2_WPF.Views.Cabinet.Items
                     Models.UserCartContent.MainUser["Cart"] = Models.UserCartContent.CartContent;
                     Models.UserCartContent.ClientList.Add(Models.UserCartContent.MainUser);
 
+                    var addCartSuccess = new ContentDialog
+                    {
+                        Title = "Item Added",
+                        Content = $"{jsonInput["Name"].ToString()} has been added to cart",
+                        CloseButtonText = "Ok",
+                        DefaultButton = ContentDialogButton.Close
+                    };
+                    await addCartSuccess.ShowAsync();
+
                     File.WriteAllText("./Data/CartData.json", Models.UserCartContent.ClientList.ToString());
 
                 } else

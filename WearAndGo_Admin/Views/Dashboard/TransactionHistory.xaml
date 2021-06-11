@@ -33,8 +33,16 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Margin="10 0" HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="0">
-            <Button Click="FindInList" Padding="50 5" Margin="10 0">
+            <StackPanel Margin="10 0" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="0">
+                <TextBox Name="in_transactionID" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" Width="200" materialDesign:HintAssist.Hint="Transaction ID"/>
+
+                <Button Click="CreateReceipt" Padding="50 5" Margin="10 0">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon VerticalAlignment="Center" Kind="Receipt"/>
+                        <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Text="Create Receipt"/>
+                    </StackPanel>
+                </Button>
+                <Button Click="FindInList" Padding="50 5" Margin="10 0">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon VerticalAlignment="Center" Kind="Search"/>
                     <TextBlock Margin="10 0 0 0" VerticalAlignment="Center" Text="Find"/>
